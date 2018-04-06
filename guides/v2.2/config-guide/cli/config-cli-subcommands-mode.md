@@ -51,7 +51,7 @@ The easiest way to do that is to run this command as the <a href="{{page.baseurl
 
 Command usage:
 
-	magento deploy:mode:show
+	bin/magento deploy:mode:show
 
 A message similar to the following displays:
 
@@ -60,7 +60,7 @@ A message similar to the following displays:
 ## Change modes {#config-mode-change}
 Command usage:
 
-	magento deploy:mode:set {mode} [-s|--skip-compilation]
+	bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
   Where:
 
@@ -68,15 +68,15 @@ Command usage:
 
   -   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
-  <div class="bs-callout bs-callout-info" id="info" makrdown="1">
-  You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>.
-  </div>
+<div class="bs-callout bs-callout-info" id="info" makrdown="1">
+	You cannot currently change from either <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a> or <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a> to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>.
+</div>
 
 Examples follow.
 
 ### Change to production mode
 
-	magento deploy:mode:set production
+	bin/magento deploy:mode:set production
 
 Following is a summary of messages that display:
 
@@ -126,11 +126,16 @@ When you change from production to developer mode, you should clear generated cl
 
 2.  Set the mode:
 
-		magento deploy:mode:set developer
+		bin/magento deploy:mode:set developer
 
 	The following message displays:
 
 		Switched to developer mode.
+
+### To run Magento commands from any directory
+<a href="{{ page.baseurl }}config-guide/cli/config-cli.html#config-install-cli-first">Run Magento system commands from anywhere</a>
+
+If you haven't added `<magento-install-directory>/bin` to your system PATH, then you can expect an error when running the magento command by itself.
 
 #### Related topics
 
